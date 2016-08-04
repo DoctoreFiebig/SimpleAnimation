@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Animation View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AnimationView" customModule="SimpleAntimation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,60 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="6Jy-Vp-Fei">
+                                <rect key="frame" x="20" y="20" width="560" height="85"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SimpleAnimation - Tutorial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7w-AF-SO4">
+                                        <rect key="frame" x="0.0" y="0.0" width="256" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7k-xQ-Bcj">
+                                        <rect key="frame" x="0.0" y="24" width="73" height="40"/>
+                                        <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Mehr Infos"/>
+                                        <connections>
+                                            <action selector="InfoClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5HI-no-mEK"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="So einfach kann Animation in Swift - iOS sein! " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZT-U9-5VI">
+                                        <rect key="frame" x="0.0" y="64" width="352" height="21"/>
+                                        <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ixl-Q6-dql">
+                                <rect key="frame" x="20" y="113" width="560" height="467"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ixl-Q6-dql" firstAttribute="top" secondItem="6Jy-Vp-Fei" secondAttribute="bottom" constant="8" id="3jK-py-8Iz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6Jy-Vp-Fei" secondAttribute="bottom" constant="495" id="BQN-wN-WUe"/>
+                            <constraint firstItem="ixl-Q6-dql" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="V94-Fy-Iep"/>
+                            <constraint firstItem="6Jy-Vp-Fei" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Yla-ce-yvP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Jy-Vp-Fei" secondAttribute="trailing" id="axb-fY-gVw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ixl-Q6-dql" secondAttribute="bottom" constant="20" id="eUo-tY-Z2Z"/>
+                            <constraint firstItem="6Jy-Vp-Fei" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="m5F-33-sMB"/>
+                            <constraint firstItem="ixl-Q6-dql" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="zBv-cK-tN4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgView" destination="ixl-Q6-dql" id="cTH-Uk-jYe"/>
+                        <outlet property="labInfo" destination="oZT-U9-5VI" id="kSO-9z-4Q1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="860" y="670"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Tutorial_Logo" width="2048" height="2048"/>
+    </resources>
 </document>
